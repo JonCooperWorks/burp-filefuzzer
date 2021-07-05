@@ -19,6 +19,9 @@ class FilePayloadGenerator(private val fileSize: Int) : IIntruderPayloadGenerato
     /**
      * getNextPayload appends a random bytes to a file header from a list of file headers.
      * It is meant to generate files of different types to test file upload endpoints.
+     *
+     * @param baseValue The base value of the payload position.
+     * It will be replaced with a synthetic file of the relevant type.
      */
     override fun getNextPayload(baseValue: ByteArray): ByteArray {
         val payload = fileHeaders.asSequence().elementAt(index)
