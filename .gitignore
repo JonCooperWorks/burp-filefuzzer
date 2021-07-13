@@ -86,4 +86,5 @@ gradle-app.setting
 !gradle-wrapper.jar
 
 # Cache of project
-.gradletasknamecache.DS_Store
+.gradletasknamecache
+.DS_Store

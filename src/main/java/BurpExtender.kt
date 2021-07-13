@@ -8,7 +8,7 @@ class BurpExtender : IBurpExtender {
     override fun registerExtenderCallbacks(callbacks: IBurpExtenderCallbacks) {
         callbacks.setExtensionName(extensionName)
 
-        // TODO: read in file size and name from UI
+        // TODO: read in  file size and name from UI
         callbacks.registerIntruderPayloadGeneratorFactory(FilePayloadGeneratorFactory(1024))
         callbacks.registerIntruderPayloadGeneratorFactory(FilenameGeneratorFactory(callbacks, "payload"))
     }
