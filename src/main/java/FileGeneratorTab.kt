@@ -14,6 +14,8 @@ class FileGeneratorTab: JPanel(), ITab, ITabFormData {
 
     companion object {
         const val tabName = "File Generator"
+        const val defaultFilename = "payload"
+        const val defaultFileSize = "1024"
     }
 
     private val payloadNameField = JTextField()
@@ -21,6 +23,8 @@ class FileGeneratorTab: JPanel(), ITab, ITabFormData {
 
 
     init {
+        payloadNameField.text = defaultFilename
+        payloadFileSizeField.text = defaultFileSize
         add(payloadNameField)
         add(payloadFileSizeField)
     }
@@ -34,10 +38,10 @@ class FileGeneratorTab: JPanel(), ITab, ITabFormData {
     }
 
     override fun getPayloadFilename(): String {
-        return if (payloadNameField.text != "") payloadNameField.text else "payload"
+        return if (payloadNameField.text != "") payloadNameField.text else defaultFilename
     }
 
     override fun getPayloadFileSize(): Int {
-        return payloadFileSizeField.text.toIntOrNull() ?: 1024
+        return payloadFileSizeField.text.toIntOrNull() ?: defaultFileSize.toInt()
     }
 }
