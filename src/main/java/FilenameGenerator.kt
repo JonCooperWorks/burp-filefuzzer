@@ -1,6 +1,6 @@
 package burp
 
-class FilenameGenerator(private val callbacks: IBurpExtenderCallbacks, private val baseName: String): IIntruderPayloadGenerator {
+class FilenameGenerator(private val callbacks: IBurpExtenderCallbacks, private val formData: ITabFormData): IIntruderPayloadGenerator {
     private var index = 0
 
     override fun hasMorePayloads(): Boolean {
@@ -18,7 +18,7 @@ class FilenameGenerator(private val callbacks: IBurpExtenderCallbacks, private v
         val payload = FileTypes.fileHeaders.asSequence().elementAt(index)
         index++
         val fileType = payload.key
-        return callbacks.helpers.stringToBytes(baseName + "." + fileType)
+        return callbacks.helpers.stringToBytes(formData.getPayloadFilename() + "." + fileType)
     }
 
     override fun reset() {

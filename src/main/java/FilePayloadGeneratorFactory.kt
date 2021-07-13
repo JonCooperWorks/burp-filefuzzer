@@ -1,6 +1,6 @@
 package burp
 
-class FilePayloadGeneratorFactory(private val fileSize: Int): IIntruderPayloadGeneratorFactory {
+class FilePayloadGeneratorFactory(private val formData: ITabFormData): IIntruderPayloadGeneratorFactory {
     companion object {
         const val fileGeneratorName = "File Generator"
     }
@@ -10,6 +10,6 @@ class FilePayloadGeneratorFactory(private val fileSize: Int): IIntruderPayloadGe
     }
 
     override fun createNewInstance(attack: IIntruderAttack): IIntruderPayloadGenerator {
-        return FilePayloadGenerator(fileSize)
+        return FilePayloadGenerator(formData)
     }
 }

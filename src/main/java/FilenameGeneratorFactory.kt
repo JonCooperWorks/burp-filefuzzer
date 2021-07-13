@@ -1,6 +1,6 @@
 package burp
 
-class FilenameGeneratorFactory(private val callbacks: IBurpExtenderCallbacks, private val baseName: String): IIntruderPayloadGeneratorFactory {
+class FilenameGeneratorFactory(private val callbacks: IBurpExtenderCallbacks, private val formData: ITabFormData): IIntruderPayloadGeneratorFactory {
     companion object {
         const val fileGeneratorName = "Filename Generator"
     }
@@ -10,6 +10,6 @@ class FilenameGeneratorFactory(private val callbacks: IBurpExtenderCallbacks, pr
     }
 
     override fun createNewInstance(attack: IIntruderAttack): IIntruderPayloadGenerator {
-        return FilenameGenerator(callbacks, baseName)
+        return FilenameGenerator(callbacks, formData)
     }
 }

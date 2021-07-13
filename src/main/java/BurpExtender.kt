@@ -1,5 +1,7 @@
 package burp
 
+import javax.swing.SwingUtilities
+
 class BurpExtender : IBurpExtender {
     companion object {
         const val extensionName = "File Fuzzer"
@@ -8,9 +10,15 @@ class BurpExtender : IBurpExtender {
     override fun registerExtenderCallbacks(callbacks: IBurpExtenderCallbacks) {
         callbacks.setExtensionName(extensionName)
 
-        // TODO: read in  file size and name from UI
-        callbacks.registerIntruderPayloadGeneratorFactory(FilePayloadGeneratorFactory(1024))
-        callbacks.registerIntruderPayloadGeneratorFactory(FilenameGeneratorFactory(callbacks, "payload"))
+        val fileGeneratorTab = FileGeneratorTab()
+
+        callbacks.registerIntruderPayloadGeneratorFactory(FilePayloadGeneratorFactory(fileGeneratorTab))
+        callbacks.registerIntruderPayloadGeneratorFactory(FilenameGeneratorFactory(callbacks, fileGeneratorTab))
+
+        SwingUtilities.invokeLater {
+            callbacks.customizeUiComponent(fileGeneratorTab)
+            callbacks.addSuiteTab(fileGeneratorTab)
+        }
     }
 
 }
