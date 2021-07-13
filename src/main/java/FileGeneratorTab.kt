@@ -1,6 +1,7 @@
 package burp
 
 import java.awt.Component
+import javax.swing.JLabel
 import javax.swing.JPanel
 import javax.swing.JTextField
 
@@ -14,18 +15,25 @@ class FileGeneratorTab: JPanel(), ITab, ITabFormData {
 
     companion object {
         const val tabName = "File Generator"
+
+        const val payloadNameLabelText = "Payload filename (no extension):"
+        const val payloadSizeLabelText = "Payload size (in bytes):"
+
         const val defaultFilename = "payload"
         const val defaultFileSize = "1024"
     }
 
+    private val payloadNameLabel = JLabel(payloadNameLabelText)
     private val payloadNameField = JTextField()
+    private val payloadFileSizeLabel = JLabel(payloadSizeLabelText)
     private val payloadFileSizeField = JTextField()
-
 
     init {
         payloadNameField.text = defaultFilename
         payloadFileSizeField.text = defaultFileSize
+        add(payloadNameLabel)
         add(payloadNameField)
+        add(payloadFileSizeLabel)
         add(payloadFileSizeField)
     }
 
