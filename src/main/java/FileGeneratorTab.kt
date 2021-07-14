@@ -24,13 +24,11 @@ class FileGeneratorTab: JPanel(), ITab, ITabFormData {
     }
 
     private val payloadNameLabel = JLabel(payloadNameLabelText)
-    private val payloadNameField = JTextField()
+    private val payloadNameField = JTextField(defaultFilename)
     private val payloadFileSizeLabel = JLabel(payloadSizeLabelText)
-    private val payloadFileSizeField = JTextField()
+    private val payloadFileSizeField = JTextField(defaultFileSize)
 
     init {
-        payloadNameField.text = defaultFilename
-        payloadFileSizeField.text = defaultFileSize
         add(payloadNameLabel)
         add(payloadNameField)
         add(payloadFileSizeLabel)
