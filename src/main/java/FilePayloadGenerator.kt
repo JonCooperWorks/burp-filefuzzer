@@ -13,7 +13,7 @@ class FilePayloadGenerator(private val formData: ITabFormData) : IIntruderPayloa
     private var index = 0
 
     override fun hasMorePayloads(): Boolean {
-        return index < FileTypes.fileHeaders.size
+        return index < FileTypes.fileHeaders.count()
     }
 
     /**
@@ -24,9 +24,9 @@ class FilePayloadGenerator(private val formData: ITabFormData) : IIntruderPayloa
      * It will be replaced with a synthetic file of the relevant type.
      */
     override fun getNextPayload(baseValue: ByteArray): ByteArray {
-        val payload = FileTypes.fileHeaders.asSequence().elementAt(index)
+        val payload = FileTypes.fileHeaders.elementAt(index)
         index++
-        val header = payload.value
+        val header = payload.second
         val randomBytes = Random.nextBytes(formData.getPayloadFileSize() - header.size)
         return header + randomBytes
     }
