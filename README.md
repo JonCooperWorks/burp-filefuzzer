@@ -3,6 +3,14 @@ This extension generates synthetic files of different types by appending random 
 It is based on my CLI fuzzer, [httpfuzz](https://github.com/joncooperworks/httpfuzz).
 Burp File Fuzzer should be used with Burp Intruder to quickly determine what file types can be uploaded.
 
+## Installation
+Installation is simple: download the 
+[jar](https://github.com/JonCooperWorks/burp-filefuzzer/releases/download/alpha-0.0.1/burp-filefuzzer-alpha-0.0.1.jar)
+and install it into Burp using the Extender tab.
+
+![Installing using Burp Extender](./images/burpextender.png)
+
+
 ## Usage
 Burp File Fuzzer will generate files of different types.
 It provides two payload generators: one that generates files and one that generates filenames.
