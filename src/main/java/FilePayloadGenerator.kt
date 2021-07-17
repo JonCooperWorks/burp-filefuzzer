@@ -8,12 +8,12 @@ import kotlin.random.Random
  *
  * @param fileSize The generated files' size in bytes.
  */
-class FilePayloadGenerator(private val fileSize: Int) : IIntruderPayloadGenerator {
+class FilePayloadGenerator(private val formData: ITabFormData) : IIntruderPayloadGenerator {
 
     private var index = 0
 
     override fun hasMorePayloads(): Boolean {
-        return index < FileTypes.fileHeaders.size
+        return index < FileTypes.fileHeaders.count()
     }
 
     /**
@@ -24,10 +24,10 @@ class FilePayloadGenerator(private val fileSize: Int) : IIntruderPayloadGenerato
      * It will be replaced with a synthetic file of the relevant type.
      */
     override fun getNextPayload(baseValue: ByteArray): ByteArray {
-        val payload = FileTypes.fileHeaders.asSequence().elementAt(index)
+        val payload = FileTypes.fileHeaders.elementAt(index)
         index++
-        val header = payload.value
-        val randomBytes = Random.nextBytes(fileSize - header.size)
+        val header = payload.second
+        val randomBytes = Random.nextBytes(formData.getPayloadFileSize() - header.size)
         return header + randomBytes
     }
 

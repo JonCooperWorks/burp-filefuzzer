@@ -5,9 +5,12 @@ object FileTypes {
      * fileHeaders is a mapping of filetypes to their corresponding magic byte sequence.
      */
     @OptIn(ExperimentalUnsignedTypes::class)
-    public val fileHeaders = mapOf(
+    val fileHeaders = sequenceOf(
         "jpeg" to ubyteArrayOf(0xFFu, 0xD8u, 0xFFu, 0xDBu).toByteArray(),
         "exe" to ubyteArrayOf(0x4Du, 0x5Au).toByteArray(),
+        "php" to ubyteArrayOf(0x3cu, 0x3fu, 0x70u, 0x68u, 0x70u).toByteArray(),
+        "php.jpg" to ubyteArrayOf(0x3cu, 0x3fu, 0x70u, 0x68u, 0x70u).toByteArray(),
+        "jpg.php" to ubyteArrayOf(0x3cu, 0x3fu, 0x70u, 0x68u, 0x70u).toByteArray(),
         "elf" to ubyteArrayOf(0x7Fu, 0x45u, 0x4Cu, 0x46u).toByteArray(),
         "txt" to ubyteArrayOf(0xEFu, 0xBBu, 0xBFu).toByteArray(),
         "png" to ubyteArrayOf(0x89u, 0x50u, 0x4Eu, 0x47u, 0x0Du, 0x0Au, 0x1Au, 0x0Au).toByteArray(),
