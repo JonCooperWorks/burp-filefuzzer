@@ -14,6 +14,7 @@ class BurpExtender : IBurpExtender {
 
         callbacks.registerIntruderPayloadGeneratorFactory(FilePayloadGeneratorFactory(fileGeneratorTab))
         callbacks.registerIntruderPayloadGeneratorFactory(FilenameGeneratorFactory(callbacks, fileGeneratorTab))
+        callbacks.registerIntruderPayloadGeneratorFactory(FileMimeTypeGeneratorFactory(callbacks, fileGeneratorTab))
 
         SwingUtilities.invokeLater {
             callbacks.customizeUiComponent(fileGeneratorTab)

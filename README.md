@@ -13,12 +13,13 @@ and install it into Burp using the Extender tab.
 
 ## Usage
 Burp File Fuzzer will generate files of different types.
-It provides two payload generators: one that generates files and one that generates filenames.
+It provides three payload generators: one that generates files, one that generates MIME types and one that generates 
+filenames.
 
 ![Selecting the appropriate payload generator](./images/bundled%20payload%20generators.png)
 
 It should be used in Pitchfork mode with injection points placed on the file and filename.
-This will cause Burp File Fuzzer to generate synthetic files and appropriate filenames.
+This will cause Burp File Fuzzer to generate synthetic files and appropriate filenames and mime types.
 
 ![Pitchfork mode in Burp Intruder](./images/pitchfork.png)
 
