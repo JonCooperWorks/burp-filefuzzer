@@ -27,6 +27,8 @@ For best results, disable URL encoding for filenames to prevent the "." in filen
 
 ![Disable URL encoding for filenames](./images/disable%20URL%20encoding.png)
 
+File Generator will add a tab to Burp's UI that allows you to set the payload size and base filename.
+![Burp UI tab](./images/burpuitab.png)
 ## Warning
 Only use this extension on targets that you have full permission to test.
 I am not responsible for anything stupid, immoral or illegal you do with this.
