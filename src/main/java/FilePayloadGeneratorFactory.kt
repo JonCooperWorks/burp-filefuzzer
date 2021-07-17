@@ -1,6 +1,6 @@
 package burp
 
-class FilePayloadGeneratorFactory(private val formData: ITabFormData): IIntruderPayloadGeneratorFactory {
+class FilePayloadGeneratorFactory(private val formData: ITabFormData) : IIntruderPayloadGeneratorFactory {
     companion object {
         const val fileGeneratorName = "File Generator"
     }

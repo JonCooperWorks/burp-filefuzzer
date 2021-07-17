@@ -11,7 +11,7 @@ import javax.swing.JTextField
  * It implements the <code>ITabFormData</code> interface.
  * @see burp.ITabFormData
  */
-class FileGeneratorTab: JPanel(), ITab, ITabFormData {
+class FileGeneratorTab : JPanel(), ITab, ITabFormData {
 
     companion object {
         const val tabName = "File Generator"

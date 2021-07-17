@@ -1,6 +1,7 @@
 package burp
 
-class FilenameGenerator(private val callbacks: IBurpExtenderCallbacks, private val formData: ITabFormData): IIntruderPayloadGenerator {
+class FilenameGenerator(private val callbacks: IBurpExtenderCallbacks, private val formData: ITabFormData) :
+    IIntruderPayloadGenerator {
     private var index = 0
 
     override fun hasMorePayloads(): Boolean {
