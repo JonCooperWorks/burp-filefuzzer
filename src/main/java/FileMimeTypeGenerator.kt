@@ -2,7 +2,8 @@ package burp
 
 import java.net.URLConnection
 
-class FileMimeTypeGenerator(private val callbacks: IBurpExtenderCallbacks, private val formData: ITabFormData): IIntruderPayloadGenerator {
+class FileMimeTypeGenerator(private val callbacks: IBurpExtenderCallbacks, private val formData: ITabFormData) :
+    IIntruderPayloadGenerator {
 
     private var index = 0
 

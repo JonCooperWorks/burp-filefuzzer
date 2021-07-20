@@ -8,18 +8,28 @@ object FileTypes {
     val fileHeaders = sequenceOf(
         "jpeg" to ubyteArrayOf(0xFFu, 0xD8u, 0xFFu, 0xDBu).toByteArray(),
         "exe" to ubyteArrayOf(0x4Du, 0x5Au).toByteArray(),
+        "jpg.exe" to ubyteArrayOf(0x4Du, 0x5Au).toByteArray(),
+        "pdf.exe" to ubyteArrayOf(0x4Du, 0x5Au).toByteArray(),
+        "png.exe" to ubyteArrayOf(0x4Du, 0x5Au).toByteArray(),
         "php" to ubyteArrayOf(0x3cu, 0x3fu, 0x70u, 0x68u, 0x70u).toByteArray(),
         "php.jpg" to ubyteArrayOf(0x3cu, 0x3fu, 0x70u, 0x68u, 0x70u).toByteArray(),
         "jpg.php" to ubyteArrayOf(0x3cu, 0x3fu, 0x70u, 0x68u, 0x70u).toByteArray(),
+        "pdf.php" to ubyteArrayOf(0x3cu, 0x3fu, 0x70u, 0x68u, 0x70u).toByteArray(),
+        "png.php" to ubyteArrayOf(0x3cu, 0x3fu, 0x70u, 0x68u, 0x70u).toByteArray(),
         "elf" to ubyteArrayOf(0x7Fu, 0x45u, 0x4Cu, 0x46u).toByteArray(),
+        "jpg.elf" to ubyteArrayOf(0x7Fu, 0x45u, 0x4Cu, 0x46u).toByteArray(),
+        "pdf.elf" to ubyteArrayOf(0x7Fu, 0x45u, 0x4Cu, 0x46u).toByteArray(),
         "txt" to ubyteArrayOf(0xEFu, 0xBBu, 0xBFu).toByteArray(),
         "png" to ubyteArrayOf(0x89u, 0x50u, 0x4Eu, 0x47u, 0x0Du, 0x0Au, 0x1Au, 0x0Au).toByteArray(),
         "class" to ubyteArrayOf(0xCAu, 0xFEu, 0xBAu, 0xBEu).toByteArray(),
         "rar" to ubyteArrayOf(0x52u, 0x61u, 0x72u, 0x21u, 0x1Au, 0x07u, 0x01u, 0x00u).toByteArray(),
         "zip" to ubyteArrayOf(0x50u, 0x4Bu, 0x03u, 0x04u).toByteArray(),
-        "emptyzip" to ubyteArrayOf(0x50u, 0x4Bu, 0x05u, 0x06u).toByteArray(),
-        "spannedzip" to ubyteArrayOf(0x50u, 0x4Bu, 0x07u, 0x08u).toByteArray(),
+        "empty.zip" to ubyteArrayOf(0x50u, 0x4Bu, 0x05u, 0x06u).toByteArray(),
+        "spanned.zip" to ubyteArrayOf(0x50u, 0x4Bu, 0x07u, 0x08u).toByteArray(),
         "jar" to ubyteArrayOf(0x50u, 0x4Bu, 0x03u, 0x04u).toByteArray(),
+        "jpg.jar" to ubyteArrayOf(0x50u, 0x4Bu, 0x03u, 0x04u).toByteArray(),
+        "pdf.jar" to ubyteArrayOf(0x50u, 0x4Bu, 0x03u, 0x04u).toByteArray(),
+        "png.jar" to ubyteArrayOf(0x50u, 0x4Bu, 0x03u, 0x04u).toByteArray(),
         "pcapng" to ubyteArrayOf(0x0au, 0x0du, 0x0du, 0x0au).toByteArray(),
         "rpm" to ubyteArrayOf(0xedu, 0xabu, 0xeeu, 0xdbu).toByteArray(),
         "sqlitedb" to ubyteArrayOf(
@@ -40,7 +50,10 @@ object FileTypes {
             0x33u,
             0x00u
         ).toByteArray(),
-        "shellscript" to ubyteArrayOf(0x23u, 0x21u).toByteArray(), // #! characters
+        "sh" to ubyteArrayOf(0x23u, 0x21u).toByteArray(), // #! characters
+        "jpg.sh" to ubyteArrayOf(0x23u, 0x21u).toByteArray(), // #! characters
+        "pdf.sh" to ubyteArrayOf(0x23u, 0x21u).toByteArray(), // #! characters
+        "png.sh" to ubyteArrayOf(0x23u, 0x21u).toByteArray(), // #! characters
         "telegramdesktop" to ubyteArrayOf(0x54u, 0x44u, 0x46u, 0x24u).toByteArray(),
         "telegramdesktopencrypted" to ubyteArrayOf(0x54u, 0x44u, 0x45u, 0x46u).toByteArray(),
         "ico" to ubyteArrayOf(0x00u, 0x00u, 0x01u, 0x00u).toByteArray(),
@@ -54,6 +67,48 @@ object FileTypes {
         "jks" to ubyteArrayOf(0xFEu, 0xEDu, 0xFEu, 0xEDu).toByteArray(),
         "ps" to ubyteArrayOf(0x25u, 0x21u, 0x50u, 0x53u).toByteArray(),
         "chm" to ubyteArrayOf(
+            0x49u,
+            0x54u,
+            0x53u,
+            0x46u,
+            0x03u,
+            0x00u,
+            0x00u,
+            0x00u,
+            0x60u,
+            0x00u,
+            0x00u,
+            0x00u
+        ).toByteArray(),
+        "jpg.chm" to ubyteArrayOf(
+            0x49u,
+            0x54u,
+            0x53u,
+            0x46u,
+            0x03u,
+            0x00u,
+            0x00u,
+            0x00u,
+            0x60u,
+            0x00u,
+            0x00u,
+            0x00u
+        ).toByteArray(),
+        "pdf.chm" to ubyteArrayOf(
+            0x49u,
+            0x54u,
+            0x53u,
+            0x46u,
+            0x03u,
+            0x00u,
+            0x00u,
+            0x00u,
+            0x60u,
+            0x00u,
+            0x00u,
+            0x00u
+        ).toByteArray(),
+        "png.chm" to ubyteArrayOf(
             0x49u,
             0x54u,
             0x53u,

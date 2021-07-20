@@ -12,7 +12,7 @@ class FileMimeTypeGeneratorFactory(
         return name
     }
 
-    override fun createNewInstance(attack: IIntruderAttack?): IIntruderPayloadGenerator {
-       return FileMimeTypeGenerator(callbacks, formData)
+    override fun createNewInstance(attack: IIntruderAttack): IIntruderPayloadGenerator {
+        return FileMimeTypeGenerator(callbacks, formData)
     }
 }
