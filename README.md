@@ -5,7 +5,7 @@ Burp File Fuzzer should be used with Burp Intruder to quickly determine what fil
 
 ## Installation
 Installation is simple: download the 
-[jar](https://github.com/JonCooperWorks/burp-filefuzzer/releases/download/v0.0.1-alpha/burp-filefuzzer-v0.0.1-alpha.jar)
+[jar](https://github.com/JonCooperWorks/burp-filefuzzer/releases)
 and install it into Burp using the Extender tab.
 
 ![Installing using Burp Extender](./images/burpextender.png)
