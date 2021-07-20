@@ -27,7 +27,12 @@ class FilePayloadGenerator(private val formData: ITabFormData) : IIntruderPayloa
         val payload = FileTypes.fileHeaders.elementAt(index)
         index++
         val header = payload.second
-        val randomBytes = Random.nextBytes(formData.getPayloadFileSize() - header.size)
+        val fileSize = if (formData.getPayloadFileSize() > header.size) {
+            formData.getPayloadFileSize() - header.size
+        } else {
+            1
+        }
+        val randomBytes = Random.nextBytes(fileSize)
         return header + randomBytes
     }
 
